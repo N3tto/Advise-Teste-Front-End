@@ -1,0 +1,22 @@
+<div class="container bg-white border px-4">
+  <div class="d-flex align-items-start justify-content-between mt-5">
+    <div>
+      <h1 class="fw-bold">Fase teste prático Front_end  </h1>
+      <h3>Pokebusca</h3>
+    </div>
+    <form class="d-flex mt-1" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+    </form>
+  </div>
+  <hr>
+  <app-card 
+    *ngFor="let pokemon of pokemons | pagination : searchControlValue : paginationEvent; index as i" 
+    [pokemon]="pokemon.value.name"
+    [idPokemon]="pokemon.index+1">
+  </app-card>
+  <mat-paginator id="paginator" [length]="pokemons.length" [pageSizeOptions]="[5]" [showFirstLastButtons]=true
+    [pageSize]="5" [hidePageSize]="true" (page)="getPagination($event)">
+  </mat-paginator>
+
+
+</div>
