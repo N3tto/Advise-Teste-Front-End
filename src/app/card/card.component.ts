@@ -16,4 +16,8 @@ export class CardComponent {
   getPokemonImg(){
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.idPokemon}.png`
   }
+  
+  capitalizeFirstLetter(string:string) {
+    return string.charAt(0).toUpperCase() + string.substring(1);
+  }
 }

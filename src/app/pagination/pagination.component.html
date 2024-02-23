@@ -1,16 +1,19 @@
 <div class="container bg-white border px-4">
-  <div class="d-flex align-items-start justify-content-between mt-5">
-    <div>
+  <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start justify-content-between mt-5">
+    <div class="d-flex flex-column align-items-center align-items-md-start">
       <h1 class="fw-bold">Fase teste prático Front_end  </h1>
-      <h3>Pokebusca</h3>
+      <h2>Pokebusca</h2>
     </div>
-    <form class="d-flex mt-1" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-    </form>
+    <div class="d-flex mt-1">
+      <input class="form-control input me-2" type="search" placeholder="Search" aria-label="Search"  [(ngModel)]="searchText">
+    </div>
   </div>
   <hr>
   <app-card 
-    *ngFor="let pokemon of pokemons | pagination : searchControlValue : paginationEvent; index as i" 
+    *ngFor="let pokemon of pokemons 
+      | pagination : searchText : paginationEvent
+      | search: searchText;
+    index as i" 
     [pokemon]="pokemon.value.name"
     [idPokemon]="pokemon.index+1">
   </app-card>

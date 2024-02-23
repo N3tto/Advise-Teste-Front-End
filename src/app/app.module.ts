@@ -11,6 +11,8 @@ import { PokemonService } from './services/pokemon.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaginatorPipe } from './pipes/paginator.pipe';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { PaginatorPipe } from './pipes/paginator.pipe';
     CardComponent,
     ContainerComponent,
     PaginationComponent,
-    PaginatorPipe
+    PaginatorPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { PokemonService } from '../services/pokemon.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { PaginatorService } from '../services/paginator.service';
 import { Subscription } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pagination',
@@ -13,9 +14,10 @@ export class PaginationComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   paginationEvent: any;
   searchControlValue:string = '';
+  searchText = '';
 
   private subscriptions = new Subscription();
-
+  searchControl = new FormControl();
   pokemons: any = [{
     name: '',
   }]

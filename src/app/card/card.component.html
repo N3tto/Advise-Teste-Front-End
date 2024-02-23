@@ -1,7 +1,7 @@
-<div class="d-flex">
-  <img class="border border-black rounded me-4" [src]="getPokemonImg()">
-  <div class="w-75">
-    <h4 class="fw-bold">{{ pokemon }} #{{idPokemon}}</h4>
+<div class="d-flex flex-column flex-md-row align-items-center align-items-md-start">
+  <img class="border border-black rounded me-4 col-6 col-md-3 col-lg-2 col-xl-1" [src]="getPokemonImg()">
+  <div class="col-12 col-md-8 d-flex flex-column align-items-center align-items-md-start mt-3 mt-md-0">
+    <h4 class="fw-bold">{{ capitalizeFirstLetter(pokemon) }} #{{idPokemon}}</h4>
     <p class="fw-medium">Características do pokemon dolor sit amet, consectetur adipiscing elit. In ultricies nunc at odio tempor tincidunt. Sed sit amet dolor velit. Donec convallis tellus ut porta molestie. Suspendisse condimentum et dui in aliquam.</p>
   </div>
 </div>
